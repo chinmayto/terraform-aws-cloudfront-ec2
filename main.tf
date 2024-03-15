@@ -40,16 +40,3 @@ module "cloud_front" {
   common_tags     = local.common_tags
   naming_prefix   = local.naming_prefix
 }
-
-/*
-####################################################
-# S3 bucket policy to allow access from cloudfront
-####################################################
-module "s3_cf_policy_primary" {
-  source                      = "./modules/s3-cf-policy"
-  bucket_id                   = module.s3_website.static_website_id
-  bucket_arn                  = module.s3_website.static_website_arn
-  cloudfront_distribution_arn = module.cloud_front.cloudfront_distribution_arn
-}
-
-*/
